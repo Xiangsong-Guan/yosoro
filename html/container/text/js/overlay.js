@@ -4,3 +4,5 @@ function open_overlay() {
 function close_overlay() {
     document.getElementById("overlay").style.height = "0%";
 }
+
+//to do with "logout" function with pop a kuang...
