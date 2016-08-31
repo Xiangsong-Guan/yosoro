@@ -1,0 +1,50 @@
+@charset "gb18030";
+/*ËÑË÷¿ò*/
+.overlay input {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/container/img/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+		width: 50%;
+}
+.overlay form {
+		position: relative;
+		top: 70%;
+}
+.overlay div {
+	height: 50vh;
+	background-color: rgba(100, 150, 255, 0.5);
+}
+/*overlay*/
+.overlay {
+	height: 0;
+	width: 100vw;
+	position: fixed;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	overflow-y: hidden;
+	transition: 1s;
+	transition-timing-function: ease;
+}
+.overlay a {
+	padding: 8px;
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+/*for overlay decoretion*/
+.overlay h1 {
+	font-size: 36px;
+}
+.overlay p {
+	color: white;
+	font-size: 20px;
+}
