@@ -1,6 +1,6 @@
-# ohayosoro
+# yosoro
 
 This project contains some omosiroi things.
 It's just for personal syumi.
 
-ĞèÒªformidable×é¼ş£¬https://github.com/felixge/node-formidable
+éœ€è¦formidableç»„ä»¶ï¼šhttps://github.com/felixge/node-formidable ï¼ˆæ„Ÿè°¢ä½œè€…ï¼ï¼‰
