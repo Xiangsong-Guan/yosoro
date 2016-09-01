@@ -1,3 +1,4 @@
+//player
 var orignal = document.getElementById("lrc_orignal");
 var translated = document.getElementById("lrc_translated");
 var player = document.getElementById("player");
@@ -73,4 +74,12 @@ function hold_player()
 	{
 		sidebar.classList.remove("sidebar_hold");
 	}
+}
+
+//overlay
+function open_overlay() {
+    document.getElementById("overlay").style.height = "100%";
+}
+function close_overlay() {
+    document.getElementById("overlay").style.height = "0%";
 }

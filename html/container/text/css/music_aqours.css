@@ -1,4 +1,40 @@
 @charset "gb18030";
+/*颜色*/
+.aqours_col   {color: #00a1e9;}
+.chika_col    {color: #ff791b;}
+.riko_col			{color: #ff7777;}
+.kanan_col		{color: #00d29e;}
+.daiya_col		{color: #f43232;}
+.you_col			{color: #2aa4db;}
+.yosiko_col		{color: #aeaeae;}
+.hanamaru_col {color: #cfba0f;}
+.mari_col			{color: #a530e0;}
+.ruby_col			{color: #ee55b7;}
+.chiri_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777);
+}
+.chiriyou_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777,#2aa4db);
+}
+.gk_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff7777,#aeaeae,#a530e0);
+}
+.azalea_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#00d29e,#f43232,#cfba0f);
+}
+.cyaron_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff791b,#2aa4db,#ee55b7);
+}
 /*全局部署*/
 body {
 	margin: 0px;
@@ -34,6 +70,24 @@ a:active      {color: #ff7777;}
 }
 ::-moz-selection {
 	color: #ff791b;
+}
+.chiri_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.gk_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.azalea_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.cyaron_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.chika_col::selection {
+	color: #ff7777;
+}
+.chika_col::-moz-selection {
+	color: #ff7777;
 }
 /*字体*/
 .eng_font {
@@ -85,7 +139,7 @@ nav a:active  {color: inherit;}
 .navbar ul li {
 	float: left;
 	font-size: 20px;
-	width: 9.2vw;
+	width: 12vw;
 	min-width: 93.563px;
 	padding: 23px 0px 23px 0px;
 	font-weight: 500;
@@ -217,6 +271,55 @@ audio {
 	height: 15px;
 	font-size: 15px;
 	color: #ff791b;
+}
+/*搜索框*/
+.overlay input {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/container/img/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+		width: 50%;
+}
+.overlay form {
+		position: relative;
+		top: 70%;
+}
+.overlay div {
+	height: 50vh;
+	background-color: rgba(100, 150, 255, 0.5);
+}
+/*overlay*/
+.overlay {
+	height: 0;
+	width: 100vw;
+	position: fixed;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	overflow-y: hidden;
+	transition: 1s;
+	transition-timing-function: ease;
+}
+.overlay a {
+	padding: 8px;
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+/*for overlay decoretion*/
+.overlay h1 {
+	font-size: 36px;
+}
+.overlay p {
+	color: white;
+	font-size: 20px;
 }
 /*加载动画*/
 .init_anime {
