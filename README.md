@@ -7,4 +7,4 @@ It's just for personal syumi.
 
 # to do...
 
-修正rb脚本，歌词转换到json，一次性组合双语歌词。
+完成nodejs静态文件传输

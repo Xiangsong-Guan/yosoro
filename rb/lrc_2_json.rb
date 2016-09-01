@@ -6,11 +6,13 @@ douhao = ','
 huanhang = "\n"
 zuodakuohao = "{"
 youdakuohao = "}"
-kongge = " "
-keyword1 = "time_tmp"
-keyword2 = "lrc"
+keyword1 = "time"
+keyword2 = "aqours_css_i"
+keyword3 = "lrc_o"
+keyword4 = "lrc_t"
 
 dest_file = "output.json"
+vice_file = "trans"
 time_tmp_rexp = /\[[\d][\d]:[\d][\d].[\d][\d]\]/
 
 def combine(count)
@@ -28,6 +30,12 @@ source_path.chomp!
 #处理每一行的回车符。
 lrc = IO.readlines(source_path, encoding: Encoding::GB18030)
 lrc.each do |l|
+	if l.end_with? "\n"
+		l.chomp!
+	end
+end
+tran_lrc = IO.readlines(vice_file, encoding: Encoding::GB18030)
+tran_lrc.each do |l|
 	if l.end_with? "\n"
 		l.chomp!
 	end
@@ -55,7 +63,7 @@ time_tmp.each do |t|
 end
 
 combine(lrc.length) do |n|
-	IO.write(dest_file, (zuodakuohao + yinhao + keyword1 + yinhao + maohao + time[n] + douhao + kongge + yinhao + keyword2 + yinhao + maohao + yinhao + lrc[n] + yinhao + youdakuohao + douhao + huanhang), mode: "a", encoding: Encoding::UTF_8)
+	IO.write(dest_file, (zuodakuohao + keyword1 + maohao + time[n] + douhao + keyword2 + maohao + "0" + douhao + keyword3 + maohao + yinhao + lrc[n] + yinhao + douhao + keyword4 + maohao + yinhao + tran_lrc[n] + yinhao + youdakuohao + douhao + huanhang), mode: "a", encoding: Encoding::GB18030)
 end
 
 exit 0
