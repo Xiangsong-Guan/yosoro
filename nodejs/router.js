@@ -2,10 +2,11 @@ var request_handlers = require("./request_handlers");
 
 var handle =
 {
-	"/c": request_handlers.container,
+	//"/c": request_handlers.container,
 	"/h": request_handlers.html,
-	"/": request_handlers.login,
-	"/logout": request_handlers.logout
+	//"/s": request_handlers.search,
+	//"/login": request_handlers.login,
+	//"/logout": request_handlers.logout
 }
 
 function route(path_name, response, data)
