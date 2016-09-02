@@ -19,5 +19,3 @@ It's just for personal syumi.
 完成搜索功能与搜索页面（使用已有layout）
 
 完成登录功能（cookie与session）
-
-完善页面样式

@@ -56,7 +56,9 @@ hr {
 }
 .hr {
 	min-width:996.656px;
-	max-width: 2000px;
+	min-height: 24.8px;
+	max-width: 2010px;
+	max-height: 50px;
 	width: 98vw;
 	height: 2.43781vw;
 }
@@ -130,19 +132,36 @@ nav a:active  {color: inherit;}
 	margin-bottom: 30px;
 }
 .navbar ul {
-	height: 70px;
-	padding: 5px 0px 5px 0px;
 	margin: 0 auto;
-	width: 64.4vw;
-	min-width: 654.941px;
+	padding: 28px 0px 28px 0px;
+	height: 24px;
+	width: 65vw;
+	min-width: 675px;
 }
 .navbar ul li {
 	float: left;
 	font-size: 20px;
-	width: 12vw;
-	min-width: 93.563px;
-	padding: 23px 0px 23px 0px;
 	font-weight: 500;
+}
+.navbar ul li:nth-of-type(1) {
+	width: 18vw;
+	min-width: 196px;
+}
+.navbar ul li:nth-of-type(2) {
+	width: 12vw;
+	min-width: 130px;
+}
+.navbar ul li:nth-of-type(3) {
+	width: 13vw;
+	min-width: 140px;
+}
+.navbar ul li:nth-of-type(4) {
+	width: 10vw;
+	min-width: 100px;
+}
+.navbar ul li:nth-of-type(5) {
+	width: 10vw;
+	min-width: 100px;
 }
 .navbar ul li a span {
 	vertical-align: -5px;
@@ -168,6 +187,7 @@ nav::after {
 	width: 70vw;
 	height: 28vw;
 	min-width: 711.891px;
+	min-height: 284.756px;
 }
 /*∏Ë¥ ≤ø∑÷≈≈∞Ê*/
 .main_cover {
@@ -283,22 +303,24 @@ audio {
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-		width: 50%;
+		width: 50vw;
 }
 .overlay form {
-		position: relative;
-		top: 70%;
+		position: absolute;
+		bottom: 5vw;
+		left: 25vw;
 }
 .overlay div {
 	height: 50vh;
 	background-color: rgba(100, 150, 255, 0.5);
+	position: relative;
 }
 /*overlay*/
 .overlay {
 	height: 0;
 	width: 100vw;
 	position: fixed;
-	z-index: 2;
+	z-index: 1;
 	left: 0;
 	top: 0;
 	background-color: rgba(0, 0, 0, 0.9);
@@ -312,6 +334,7 @@ audio {
   top: 20px;
   right: 45px;
   font-size: 60px;
+	z-index: 1;
 }
 /*for overlay decoretion*/
 .overlay h1 {
