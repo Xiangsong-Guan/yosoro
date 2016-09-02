@@ -15,7 +15,7 @@ function roll_lrc()
 	ctime = player.currentTime;
 	for(index = 0; index < lrc.length; index++)
 	{
-		if((ctime < lrc[index + 1].time) && (ctime >= lrc[index].time))
+		if((ctime < (lrc[index + 1].time - 0.5)) && (ctime >= (lrc[index].time - 0.5)))
 		{
 			if(now_i != index)
 			{
@@ -29,6 +29,7 @@ function roll_lrc()
 					translated.innerHTML = lrc[index].lrc_t;
 					orignal.className = aqours_css[lrc[index].aqours_css_i];
 					translated.className = aqours_css[(lrc[index].aqours_css_i + num_of_col)];
+
 					lrc_pad.style.opacity = "1.0";
 				}, 500);
 			}
