@@ -59,7 +59,7 @@ tmp_f = 0.0;
 time_tmp.each do |t|
 	tmp_a = t.split(':')
 	tmp_f = (tmp_a[0].to_f * 60.0) + tmp_a[1].to_f;
-	time.push(tmp_f.to_s);
+	time.push(tmp_f.round(5).to_s);
 end
 
 combine(lrc.length) do |n|

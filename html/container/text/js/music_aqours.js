@@ -15,25 +15,13 @@ function roll_lrc()
 	ctime = player.currentTime;
 	for(index = 0; index < lrc.length; index++)
 	{
-		if((ctime < lrc[index + 1].time) && (ctime >= lrc[index].time))
+		if((ctime < (lrc[index + 1].time - 0.5)) && (ctime >= (lrc[index].time - 0.5)))
 		{
 			if(now_i != index)
 			{
 				now_i = index;
 
-				id_min = setInterval(frame_min, 50);
-				function frame_min()
-				{
-					if(lrc_pad.style.opacity == "0")
-					{
-						clearInterval(id_min);
-					}
-					else
-					{
-						opa = opa - 1;
-						lrc_pad.style.opacity = (opa / 10).toString();
-					}
-				}
+				lrc_pad.style.opacity = "0.0";
 
 				setTimeout(function()
 				{
@@ -42,20 +30,8 @@ function roll_lrc()
 					orignal.className = aqours_css[lrc[index].aqours_css_i];
 					translated.className = aqours_css[(lrc[index].aqours_css_i + num_of_col)];
 
-					id_add = setInterval(frame_add, 50);
-				}, 550);
-				function frame_add()
-				{
-					if(lrc_pad.style.opacity == "1")
-					{
-						clearInterval(id_add);
-					}
-					else
-					{
-						opa = opa + 1;
-						lrc_pad.style.opacity = (opa / 10).toString();
-					}
-				}
+					lrc_pad.style.opacity = "1.0";
+				}, 500);
 			}
 			break;
 		}

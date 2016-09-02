@@ -254,6 +254,8 @@ audio {
 }
 .lrc {
 	font-weight: 500;
+	transition: 0.5s;
+	transition-timing-function: linear;
 }
 .lrc p:first-child {
 	height: 48px;
