@@ -8,8 +8,6 @@ It's just for personal syumi.
 
 # to do...
 
-完成nodejs静态文件传输
-
 优化player的js脚本（trans部分）
 
 完成主页设计制作，主要用于简单介绍与身份验证入口
