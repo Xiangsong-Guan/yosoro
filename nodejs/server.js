@@ -10,6 +10,7 @@ function start(route, handle) {
 		{
 			var get_data = querystring.parse(url.parse(request.url).query);
 
+			get_data["header_range"] = request.headers["range"];
 			route(url.parse(request.url).pathname, response, get_data);
 		}
 		else

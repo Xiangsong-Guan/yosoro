@@ -2,9 +2,8 @@ var request_handlers = require("./request_handlers");
 
 var handle =
 {
-	//"/c": request_handlers.container,
-	"/h": request_handlers.html,
-	//"/s": request_handlers.search,
+	"/resource": request_handlers.resource,
+	//"/search": request_handlers.search,
 	//"/login": request_handlers.login,
 	//"/logout": request_handlers.logout
 }
