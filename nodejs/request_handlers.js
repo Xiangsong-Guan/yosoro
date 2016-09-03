@@ -3,16 +3,14 @@ var myutil = require("./myutils/myutil");
 
 const type_and_dir =
 {
-  "html": "./nodejs/html/",
+  "html": "./nodejs/container/html/",
   "audio": "./nodejs/container/media/audio/"
 }
-
 const type_and_ext =
 {
   "html": ".html",
   "audio": ".mp3"
 }
-
 const type_and_mime =
 {
   "html": "text/html",
