@@ -1,5 +1,7 @@
 var fs = require("fs");
 
+const default_len = 1048576;
+
 function no_range(full_path, callback)
 {
 	fs.stat(full_path, function(err, stats)
@@ -27,7 +29,6 @@ function no_range(full_path, callback)
 
 function with_range(full_path, range, callback)
 {
-	var default_len = 1048576;
 	var stats = fs.statSync(full_path);
 
 	if(!stats.isFile())
@@ -64,6 +65,11 @@ function with_range(full_path, range, callback)
 						"file_size": stats.size,
 						"data": buffer
 					});
+
+					stats = null;
+					start = null;
+					end = null;
+					buf = null;
 				}
 				else
 				{

@@ -2,6 +2,7 @@ var http        = require("http");
 var url         = require("url");
 var querystring = require("querystring");
 var formidable  = require("./formidable");
+var myutil = require("./myutils/myutil");
 
 function start(route, handle) {
 	http.createServer(function(request, response)
@@ -10,7 +11,7 @@ function start(route, handle) {
 		{
 			var get_data = querystring.parse(url.parse(request.url).query);
 
-			get_data["header_range"] = request.headers["range"];
+			get_data.header_range = request.headers.range;
 			route(url.parse(request.url).pathname, response, get_data);
 		}
 		else
@@ -31,9 +32,7 @@ function start(route, handle) {
 				}
 				else
 				{
-					response.writeHead(500, {"Content-Type": "text/plain"});
-					response.write(error + "\n");
-					response.end();
+					myutil.res(response, 500, {"Content-Type": "text/plain"}, (err + "\n"));
 				}
 			});
 		}

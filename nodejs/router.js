@@ -1,6 +1,7 @@
 var request_handlers = require("./request_handlers");
+var myutil = require("./myutils/myutil");
 
-var handle =
+const handle =
 {
 	"/resource": request_handlers.resource,
 	//"/search": request_handlers.search,
@@ -16,13 +17,11 @@ function route(path_name, response, data)
 	}
 	else
 	{
-    response.writeHead(404,
+		myutil.res(response, 404,
 		{
 			"Content-Type": "text/plain",
 			"Refresh"     : "5;url=http://localhost/"
-		});
-    response.write("404 NOT FOUND\n\n\nWE DO NOT KNOW WHAT YOU WANT TO DO...<(_ _)>\n\n\nREDIRECT TO HOME PAGE IN FIVE SECOND!");
-    response.end();
+		}, "404 NOT FOUND\n\n\nWE DO NOT KNOW WHAT YOU WANT TO DO...<(_ _)>\n\n\nREDIRECT TO HOME PAGE IN FIVE SECOND!");
 	}
 }
 

@@ -1,21 +1,19 @@
-var file_process = require("./myutil/file_process");
+var file_process = require("./myutils/file_process");
+var myutil = require("./myutils/myutil");
 
-var res_type_attr_name = "type";
-var res_name_attr_name = "name";
-
-var type_and_dir =
+const type_and_dir =
 {
   "html": "./nodejs/html/",
   "audio": "./nodejs/container/media/audio/"
 }
 
-var type_and_ext =
+const type_and_ext =
 {
   "html": ".html",
   "audio": ".mp3"
 }
 
-var type_and_mime =
+const type_and_mime =
 {
   "html": "text/html",
   "audio": "audio/mpeg"
@@ -23,55 +21,43 @@ var type_and_mime =
 
 function resource(response, data)
 {
-  var res_type = data[res_type_attr_name];
-  var full_path = type_and_dir[res_type] + data[res_name_attr_name] + type_and_ext[res_type];
-
-  if(!data["header_range"])
+  if(!data.header_range)
   {
-    file_process.no_range(full_path, function(err, file_data)
+    file_process.no_range((type_and_dir[data.type] + data.name + type_and_ext[data.type]), function(err, file_data)
     {
       if(!(err))
       {
-        response.writeHead(200, {"Content-Type": type_and_mime[res_type]});
-        response.write(file_data);
-        response.end();
+        myutil.res(response, 200, {"Content-Type": type_and_mime[data.type]}, file_data);
       }
       else
       {
-        response.writeHead(500, {"Content-Type": "text/plain"});
-        response.write(err + "\n");
-        response.end();
+        myutil.res(response, 500, {"Content-Type": "text/plain"}, (err + "\n"));
       }
     });
   }
   else
   {
-    file_process.with_range(full_path, data["header_range"], function(err, out_of_range, file_data)
+    file_process.with_range((type_and_dir[data.type] + data.name + type_and_ext[data.type]), data.header_range, function(err, out_of_range, file_data)
     {
       if(!(err))
       {
         if(!out_of_range)
         {
-          response.writeHead(206,
+          myutil.res(response, 206,
           {
-            "Content-Type": type_and_mime[res_type],
-            "Content-Range": "bytes " + file_data["start"] + "-" + file_data["end"] + "/" + file_data["file_size"],
-            "Content-Length": file_data["size"]
-          });
-          response.write(file_data["data"]);
-          response.end();
+            "Content-Type": type_and_mime[data.type],
+            "Content-Range": "bytes " + file_data.start + "-" + file_data.end + "/" + file_data.file_size,
+            "Content-Length": file_data.size
+          }, file_data.data);
         }
         else
         {
-          response.writeHead(406, {"Content-Range": ("bytes */" + file_data["file_size"])});
-          response.end();
+          myutil.res(response, 406, {"Content-Range": ("bytes */" + file_data.file_size)}, null);
         }
       }
       else
       {
-        response.writeHead(500, {"Content-Type": "text/plain"});
-        response.write(err + "\n");
-        response.end();
+        myutil.res(response, 500, {"Content-Type": "text/plain"}, (err + "\n"));
       }
     });
   }
