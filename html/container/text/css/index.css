@@ -1,1 +1,149 @@
 @charset "gb18030";
+/*颜色*/
+.aqours_col   {color: #00a1e9;}
+.chika_col    {color: #ff791b;}
+.riko_col			{color: #ff7777;}
+.kanan_col		{color: #00d29e;}
+.daiya_col		{color: #f43232;}
+.you_col			{color: #2aa4db;}
+.yosiko_col		{color: #aeaeae;}
+.hanamaru_col {color: #cfba0f;}
+.mari_col			{color: #a530e0;}
+.ruby_col			{color: #ee55b7;}
+.chiri_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777);
+}
+.chiriyou_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777,#2aa4db);
+}
+.gk_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff7777,#aeaeae,#a530e0);
+}
+.azalea_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#00d29e,#f43232,#cfba0f);
+}
+.cyaron_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff791b,#2aa4db,#ee55b7);
+}
+/*全局部署*/
+body {
+	margin: 0px;
+	text-align: center;
+	min-width: 950px;
+}
+a             {transition: 0.3s;text-decoration: none;}
+a:link        {color: #ff7777;}
+a:visited     {color: #ff7777;}
+a:hover       {color: #ff791b;}
+a:active      {color: #ff7777;}
+::selection {
+	color: #ff791b;
+}
+::-moz-selection {
+	color: #ff791b;
+}
+.chiri_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.gk_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.azalea_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.cyaron_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.chika_col::selection {
+	color: #ff7777;
+}
+.chika_col::-moz-selection {
+	color: #ff7777;
+}
+/*字体*/
+.eng_font {
+	font-family: 'Josefin Slab', serif;
+	font-weight:600;
+}
+.jp_font {
+	font-family: メイリオ, Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+.zh-cn_font {
+	font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+}
+/*海报*/
+.ver_poster {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.ver_poster img {
+	height: 99.6vh;
+}
+/*main_cover*/
+.main_cover :first-child {
+	margin-top: 0px;
+}
+.main_cover {
+	height: calc(99.6vh - 60px);
+}
+/*页脚*/
+.footer_cover {
+	padding-bottom: 5px;
+}
+.j-z_vertical-align {
+	vertical-align: -1px;
+}
+.footer_cover p {
+	margin-top: 0px;
+	margin-bottom: 11px;
+}
+/*加载动画*/
+.init_anime {
+	opacity: 0.0;
+}
+@keyframes opacity {
+	from {opacity: 0.0;}
+	to {opacity: 1.0;}
+}
+.footer_cover {
+	animation-name: opacity;
+	animation-duration: 1s;
+	animation-delay: 1.5s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+@keyframes slide_poster {
+	from {
+		opacity: 0.0;
+		left: -300px;
+	}
+	to {
+		opacity: 1.0;
+		left: 0px;
+	}
+}
+.ver_poster {
+	animation-name: slide_poster;
+	animation-duration: 1.2s;
+	animation-timing-function: ease;
+}
+/*适配大屏幕*/
+@media screen and (min-height: 1001px) {
+	.ver_poster {
+		background-color: black;
+	}
+	.ver_poster img {
+		visibility: hidden;
+	}
+}
