@@ -39,7 +39,6 @@
 body {
 	margin: 0px;
 	text-align: center;
-	min-width: 950px;
 }
 a             {transition: 0.3s;text-decoration: none;}
 a:link        {color: #ff7777;}
@@ -81,6 +80,25 @@ a:active      {color: #ff7777;}
 .zh-cn_font {
 	font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
 }
+/*侧封*/
+.ce_feng {
+	float: left;
+	width: 50px;
+	background-color: black;
+	color: deeppink;
+	font-size: 22px;
+	line-height: 45px;
+	height: 99.6vh;
+	min-height: 525px;
+	font-weight: 600;
+}
+.ce_feng p {
+	text-shadow: 0 0 15px lightpink;
+	height: calc(99.6vh - 30px);
+	min-height: 525px;
+	margin:0;
+	padding-top: 30px;
+}
 /*海报*/
 .ver_poster {
 	position: absolute;
@@ -89,6 +107,7 @@ a:active      {color: #ff7777;}
 }
 .ver_poster img {
 	height: 99.6vh;
+	min-height: 525px;
 }
 /*main_cover*/
 .main_cover :first-child {
@@ -96,6 +115,44 @@ a:active      {color: #ff7777;}
 }
 .main_cover {
 	height: calc(99.6vh - 60px);
+	min-height: 465px;
+}
+/*上标题*/
+.title {
+	padding-top: 10vh;
+}
+.title h1 {
+	font-size: 4vmax;
+}
+.title p {
+	font-size: 1.5vmax;
+}
+/*表单*/
+form span {
+	font-size: 2vmax;
+}
+input[required] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 20px;
+		height: 7.5vh;
+		width: 30vw;
+		margin-top: 10vh;
+		margin-bottom: 10vh;
+		vertical-align: 4px;
+}
+button {
+    background-color: #00a1e9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+		font-size: 20px;
+    width: 300px;
 }
 /*页脚*/
 .footer_cover {
@@ -140,10 +197,10 @@ a:active      {color: #ff7777;}
 }
 /*适配大屏幕*/
 @media screen and (min-height: 1001px) {
-	.ver_poster {
-		background-color: black;
+	.ver_poster, .ver_poster img {
+		display: none;
 	}
-	.ver_poster img {
-		visibility: hidden;
+	.ce_feng {
+		width: calc(100vh * 0.729);
 	}
 }
