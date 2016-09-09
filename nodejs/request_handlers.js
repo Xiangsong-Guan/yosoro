@@ -7,8 +7,8 @@
   my_u = require("./myutils/myutil");
 
   type_and_dir = {
-    html: "./nodejs/container/html/",
-    audio: "./nodejs/container/media/audio/"
+    html: "./container/html/",
+    audio: "./container/media/audio/"
   };
 
   type_and_ext = {
