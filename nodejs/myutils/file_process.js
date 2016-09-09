@@ -7,25 +7,28 @@
   default_len = 1048576;
 
   no_range = function(full_path, callback) {
-    fs.stat(full_path, function(err_1, stats) {
-      if (!err_1) {
-        if (stats.isFile(null)) {
-          fs.readFile(full_path, function(err_2, data) {
-            callback(err_2, data);
-          });
-        } else {
-          callback("NO SUCH RESOURCE!", null);
-        }
-      } else {
-        callback(err_1, null);
-      }
+    var error, exp_m, stats;
+    try {
+      stats = fs.statSync(full_path);
+    } catch (error) {
+      exp_m = error;
+      stats = null;
+      callback("NO SUCH RESOURCE!", null);
+      return;
+    }
+    fs.readFile(full_path, function(err_2, data) {
+      callback(err_2, data);
+      stats = null;
     });
   };
 
   with_range = function(full_path, range, callback) {
-    var array, end, start, stats;
-    stats = fs.statSync(full_path);
-    if (!stats.isFile(null)) {
+    var array, end, error, exp_m, start, stats;
+    try {
+      stats = fs.statSync(full_path);
+    } catch (error) {
+      exp_m = error;
+      stats = null;
       callback("NO SUCH RESOURCE!", false, null);
       return;
     }
