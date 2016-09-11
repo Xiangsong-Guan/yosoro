@@ -83,21 +83,21 @@ a:active      {color: #ff7777;}
 /*侧封*/
 .ce_feng {
 	float: left;
-	width: 50px;
+	width: 5vw;
 	background-color: black;
 	color: deeppink;
-	font-size: 22px;
-	line-height: 45px;
-	height: 99.6vh;
+	font-size: 3vh;
+	line-height: 6.5vh;
+	height: 100vh;
 	min-height: 525px;
 	font-weight: 600;
 }
 .ce_feng p {
-	text-shadow: 0 0 15px lightpink;
-	height: calc(99.6vh - 30px);
+	text-shadow: 0 0 1.5vh white;
+	height: 95vh;
 	min-height: 525px;
 	margin:0;
-	padding-top: 30px;
+	padding-top: 5vh;
 }
 /*海报*/
 .ver_poster {
@@ -106,7 +106,9 @@ a:active      {color: #ff7777;}
 	top: 0px;
 }
 .ver_poster img {
-	height: 99.6vh;
+	height: 100vh;
+	width: 67.9vh;
+	min-width: calc(525px * 0.679);
 	min-height: 525px;
 }
 /*main_cover*/
@@ -114,7 +116,7 @@ a:active      {color: #ff7777;}
 	margin-top: 0px;
 }
 .main_cover {
-	height: calc(99.6vh - 60px);
+	height: calc(100vh - 60px);
 	min-height: 465px;
 }
 /*上标题*/
@@ -173,10 +175,24 @@ button {
 	from {opacity: 0.0;}
 	to {opacity: 1.0;}
 }
+.ce_feng {
+	animation-name: opacity;
+	animation-delay: 1s;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+.main_cover {
+	animation-name: opacity;
+	animation-delay: 1.5s;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
 .footer_cover {
 	animation-name: opacity;
-	animation-duration: 1s;
-	animation-delay: 1.5s;
+	animation-duration: 1.5s;
+	animation-delay: 2.5s;
 	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 }
@@ -187,20 +203,13 @@ button {
 	}
 	to {
 		opacity: 1.0;
-		left: 0px;
+		left: 5vw;
 	}
 }
 .ver_poster {
 	animation-name: slide_poster;
-	animation-duration: 1.2s;
+	animation-delay: 0.3s;
+	animation-duration: 1s;
 	animation-timing-function: ease;
-}
-/*适配大屏幕*/
-@media screen and (min-height: 1001px) {
-	.ver_poster, .ver_poster img {
-		display: none;
-	}
-	.ce_feng {
-		width: calc(100vh * 0.729);
-	}
+	animation-fill-mode: forwards;
 }
