@@ -208,7 +208,6 @@ button {
 }
 .ver_poster {
 	animation-name: slide_poster;
-	animation-delay: 0.3s;
 	animation-duration: 1s;
 	animation-timing-function: ease;
 	animation-fill-mode: forwards;

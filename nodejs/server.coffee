@@ -1,7 +1,7 @@
 http = require "http"
 url  = require "url"
 qr_s = require "querystring"
-fmdb = require "./formidable"
+fmdb = require "formidable"
 my_u = require "./myutils/myutil"
 
 start = (route, handle) ->
