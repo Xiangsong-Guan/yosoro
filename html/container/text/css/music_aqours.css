@@ -1,4 +1,25 @@
 @charset "gb18030";
+/*loader*/
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+ border-top: 16px solid #ff791b;
+ border-bottom: 16px solid #ff7777;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 /*颜色*/
 .aqours_col   {color: #00a1e9;}
 .chika_col    {color: #ff791b;}
@@ -221,6 +242,7 @@ article p {
 .footer_cover {
 	clear: left;
 	padding-bottom: 20px;
+	font-size: 1.2vmax;
 }
 .j-z_vertical-align {
 	vertical-align: -1px;
@@ -301,12 +323,13 @@ audio {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 1.2vmax;
     background-color: white;
     background-image: url('/container/img/searchicon.png');
-    background-position: 10px 10px;
+    background-position: 1vw 50%;
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+		padding: 0 3vw 0 3vw;
+		height: 7.5vh;
 		width: 50vw;
 }
 .overlay form {
@@ -342,11 +365,11 @@ audio {
 }
 /*for overlay decoretion*/
 .overlay h1 {
-	font-size: 36px;
+	font-size: 3vmax;
 }
 .overlay p {
 	color: white;
-	font-size: 20px;
+	font-size: 1.5vmax;
 }
 /*加载动画*/
 .init_anime {
@@ -455,4 +478,61 @@ audio {
 	animation-duration: 1s;
 	animation-iteration-count: 2;
 	animation-timing-function: ease;
+}
+/*适配大屏*/
+@media screen and (min-height: 1000px) {
+	.header_cover {
+		margin-bottom: 42px;
+	}
+	.navbar {
+		margin-bottom: 42px;
+		height: 100px;
+	}
+	.navbar ul {
+		padding: 38px 0px 38px 0px;
+	}
+	.navbar ul li {
+		font-size: 25px;
+	}
+	.headline {
+		margin-bottom: 35px;
+	}
+	.headline h1 {
+		height: 55px;
+		margin-bottom: 15px;
+		font-size: 35px;
+	}
+	.headline p {
+		height: 33px;
+		margin-top: 15;
+		font-size: 22px;
+	}
+	nav::before {
+		top: 168.75px;
+	}
+	nav::after {
+		top: 252.75px;
+	}
+	.sidebar {
+		bottom: 75px;
+		padding: 15px 50px 15px 30px;
+		right: -430px;
+		width: 430px;
+		font-size: 24px;
+	}
+	.sidebar_hold {
+		right: 0px;
+	}
+	.audio_staff {
+		padding-left: 15px;
+	}
+	audio {
+		width: 430px;
+	}
+	.lrc p:first-child {
+		height: 70px;
+	}
+	.lrc p:last-child {
+		height: 65px;
+	}
 }

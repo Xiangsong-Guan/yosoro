@@ -1,0 +1,103 @@
+@charset "gb18030";
+/*loader*/
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+ border-top: 16px solid #ff791b;
+ border-bottom: 16px solid #ff7777;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/*颜色*/
+.aqours_col   {color: #00a1e9;}
+.chika_col    {color: #ff791b;}
+.riko_col			{color: #ff7777;}
+.kanan_col		{color: #00d29e;}
+.daiya_col		{color: #f43232;}
+.you_col			{color: #2aa4db;}
+.yosiko_col		{color: #aeaeae;}
+.hanamaru_col {color: #cfba0f;}
+.mari_col			{color: #a530e0;}
+.ruby_col			{color: #ee55b7;}
+.chiri_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777);
+}
+.chiriyou_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777,#2aa4db);
+}
+.gk_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff7777,#aeaeae,#a530e0);
+}
+.azalea_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#00d29e,#f43232,#cfba0f);
+}
+.cyaron_col {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top,#ff791b,#2aa4db,#ee55b7);
+}
+/*全局部署*/
+body {
+	margin: 0px;
+	text-align: center;
+}
+a             {transition: 0.3s;text-decoration: none;}
+a:link        {color: #ff7777;}
+a:visited     {color: #ff7777;}
+a:hover       {color: #ff791b;}
+a:active      {color: #ff7777;}
+::selection {
+	color: #ff791b;
+}
+::-moz-selection {
+	color: #ff791b;
+}
+.chiri_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.gk_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.azalea_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.cyaron_col::selection {
+	-webkit-text-fill-color: #ff791b;
+}
+.chika_col::selection {
+	color: #ff7777;
+}
+.chika_col::-moz-selection {
+	color: #ff7777;
+}
+/*字体*/
+.eng_font {
+	font-family: 'Josefin Slab', serif;
+	font-weight:600;
+}
+.jp_font {
+	font-family: メイリオ, Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+.zh-cn_font {
+	font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+}
