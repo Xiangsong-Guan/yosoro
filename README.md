@@ -4,12 +4,12 @@ This project contains some omosiroi things.
 
 It's just for personal syumi.
 
-ĞèÒªformidable×é¼ş£ºhttps://github.com/felixge/node-formidable £¨¸ĞĞ»×÷Õß£¡£©
+éœ€è¦formidableç»„ä»¶ï¼šhttps://github.com/felixge/node-formidable ï¼ˆæ„Ÿè°¢ä½œè€…ï¼ï¼‰
 
 # to do...
 
-Íê³ÉaboutÖÆ×÷£¬Ö÷ÒªÓÃÓÚ½éÉÜÓëÆäËû
+å®Œæˆaboutåˆ¶ä½œï¼Œä¸»è¦ç”¨äºä»‹ç»ä¸å…¶ä»–
 
-Íê³ÉËÑË÷¹¦ÄÜÓëËÑË÷Ò³Ãæ£¨Ê¹ÓÃÒÑÓĞlayout£©
+å®Œæˆæœç´¢åŠŸèƒ½ä¸æœç´¢é¡µé¢ï¼ˆä½¿ç”¨å·²æœ‰layoutï¼‰
 
-Íê³ÉµÇÂ¼¹¦ÄÜ£¨cookieÓësession£©
+å®Œæˆç™»å½•åŠŸèƒ½ï¼ˆcookieä¸sessionï¼‰
