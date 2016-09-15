@@ -60,6 +60,7 @@
 body {
 	margin: 0px;
 	text-align: center;
+	min-width: 750px;
 }
 a             {transition: 0.3s;text-decoration: none;}
 a:link        {color: #ff7777;}
@@ -192,6 +193,7 @@ button {
 /*º”‘ÿ∂Øª≠*/
 .init_anime {
 	opacity: 0.0;
+	animation-play-state: paused;
 }
 @keyframes opacity {
 	from {opacity: 0.0;}
@@ -214,7 +216,7 @@ button {
 .footer_cover {
 	animation-name: opacity;
 	animation-duration: 1.5s;
-	animation-delay: 2.5s;
+	animation-delay: 2s;
 	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 }

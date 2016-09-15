@@ -3,6 +3,7 @@ my_u = require "./myutils/myutil"
 
 handle =
 	"/resource": rq_h.resource
+	"/login"   : rq_h.login
 
 route = (path_name, response, data) ->
 	if typeof handle[path_name] == "function"

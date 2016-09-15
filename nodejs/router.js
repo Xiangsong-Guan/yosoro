@@ -7,7 +7,8 @@
   my_u = require("./myutils/myutil");
 
   handle = {
-    "/resource": rq_h.resource
+    "/resource": rq_h.resource,
+    "/login": rq_h.login
   };
 
   route = function(path_name, response, data) {
