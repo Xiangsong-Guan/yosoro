@@ -57,7 +57,19 @@
     }
   };
 
-  login = function(response, data) {};
+  login = function(response, data) {
+    fl_p.no_range(type_and_dir.html + "preface.html", function(err_1, file_data) {
+      if (!err_1) {
+        my_u.write_res(response, 200, {
+          "Content-Type": "text/html"
+        }, file_data);
+      } else {
+        my_u.write_res(response, 500, {
+          "Content-Type": "text/plain"
+        }, err_1 + "\n");
+      }
+    });
+  };
 
   logout = function(response, data) {};
 

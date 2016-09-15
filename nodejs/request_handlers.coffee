@@ -14,7 +14,7 @@ type_and_mime =
 resource = (response, data) ->
 	if !data.header_range
 		fl_p.no_range type_and_dir[data.type] + data.name + type_and_ext[data.type], (err_1, file_data) ->
-			if !err_1 then my_u.write_res response, 200,	"Content-Type": type_and_mime[data.type], file_data	else my_u.write_res response, 500, "Content-Type": "text/plain", "#{err_1}\n"
+			if !err_1 then my_u.write_res response, 200, "Content-Type": type_and_mime[data.type], file_data else my_u.write_res response, 500, "Content-Type": "text/plain", "#{err_1}\n"
 			return
 	else
 		fl_p.with_range type_and_dir[data.type] + data.name + type_and_ext[data.type], data.header_range, (err_2, out_of_range, file_data) ->
@@ -32,7 +32,12 @@ resource = (response, data) ->
 	return
 
 login = (response, data) ->
-	# to do...
+	#to do ...
+
+	fl_p.no_range type_and_dir.html + "preface.html", (err_1, file_data) ->
+		if !err_1 then my_u.write_res response, 200, "Content-Type": "text/html", file_data else my_u.write_res response, 500, "Content-Type": "text/plain", "#{err_1}\n"
+		return
+	return
 
 logout = (response, data) ->
 	# to do...

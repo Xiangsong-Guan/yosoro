@@ -21,7 +21,7 @@
         route((url.parse(request.url)).pathname, response, get_data);
         return;
       } else {
-        form = new formidable.IncomingForm();
+        form = new fmdb.IncomingForm();
         form.parse(request, function(err_1, fields, files) {
           var post_data;
           if (!err_1) {
