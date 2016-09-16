@@ -1,5 +1,9 @@
 @charset "gb18030";
 /*loader*/
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .loader {
   position: absolute;
   left: 50%;
@@ -16,79 +20,16 @@
   height: 120px;
   animation: spin 2s linear infinite;
 }
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-/*颜色*/
-.aqours_col   {color: #00a1e9;}
-.chika_col    {color: #ff791b;}
-.riko_col			{color: #ff7777;}
-.kanan_col		{color: #00d29e;}
-.daiya_col		{color: #f43232;}
-.you_col			{color: #2aa4db;}
-.yosiko_col		{color: #aeaeae;}
-.hanamaru_col {color: #cfba0f;}
-.mari_col			{color: #a530e0;}
-.ruby_col			{color: #ee55b7;}
-.chiri_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777);
-}
-.chiriyou_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777,#2aa4db);
-}
-.gk_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#ff7777,#aeaeae,#a530e0);
-}
-.azalea_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#00d29e,#f43232,#cfba0f);
-}
-.cyaron_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#ff791b,#2aa4db,#ee55b7);
-}
 /*全局部署*/
 body {
 	margin: 0px;
 	text-align: center;
 }
-a             {transition: 0.3s;text-decoration: none;}
-a:link        {color: #ff7777;}
-a:visited     {color: #ff7777;}
-a:hover       {color: #ff791b;}
-a:active      {color: #ff7777;}
 ::selection {
 	color: #ff791b;
 }
 ::-moz-selection {
 	color: #ff791b;
-}
-.chiri_col::selection {
-	-webkit-text-fill-color: #ff791b;
-}
-.gk_col::selection {
-	-webkit-text-fill-color: #ff791b;
-}
-.azalea_col::selection {
-	-webkit-text-fill-color: #ff791b;
-}
-.cyaron_col::selection {
-	-webkit-text-fill-color: #ff791b;
-}
-.chika_col::selection {
-	color: #ff7777;
-}
-.chika_col::-moz-selection {
-	color: #ff7777;
 }
 /*字体*/
 .eng_font {
@@ -101,8 +42,84 @@ a:active      {color: #ff7777;}
 .zh-cn_font {
 	font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
 }
-
-
-.init_anime {
-	animation-play-state: paused;
+/*Last*/
+.last {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #00a1e9;
 }
+.last h1 {
+	position: absolute;
+	top: 40%;
+	left: 35%;
+	color: white;
+	font-size: 3vmax;
+	font-weight: 900;
+	filter: drop-shadow(0 0 10px white);
+}
+.you {
+	position: absolute;
+	bottom: 0px;
+	left: 25%;
+	height: 40%;
+	width: 39.5%;
+}
+.yosiko {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 65%;
+	width: 33.8%;
+}
+.daiya {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	height: 65%;
+	width: 27.8%;
+}
+.you:hover, .daiya:hover, .yosiko:hover {
+	filter: drop-shadow(0 0 10px white);
+}
+.feather_1 {
+	top: 10%;
+	left: 40%;
+	height: 20%;
+	width: 8%;
+	filter: blur(3px);
+}
+.feather_2 {
+	top: 70%;
+	left: 5%;
+	height: 25%;
+	width: 14%;
+	filter: blur(2px);
+}
+.feather_3 {
+	top: 20%;
+	left: 50%;
+	height: 25%;
+	width: 9%;
+	filter: blur(1px);
+}
+.feather_4 {
+	top: 10%;
+	left: 70%;
+	height: 14%;
+	width: 20%;
+}
+.slide:hover {
+	filter: drop-shadow(0 0 10px white);
+}
+/*slider*/
+.slide {
+	position: absolute;
+	transition-delay: 0.1s;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+
+/*动画建议全部使用js+transition控制*/
