@@ -9,8 +9,6 @@
   left: 50%;
   top: 50%;
   z-index: 1;
-  width: 150px;
-  height: 150px;
   margin: -75px 0 0 -75px;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -107,19 +105,51 @@ body {
 }
 .feather_4 {
 	top: 10%;
-	left: 70%;
-	height: 14%;
-	width: 20%;
+	left: 65%;
+	height: 15%;
+	width: 18%;
 }
-.slide:hover {
-	filter: drop-shadow(0 0 10px white);
+.feather_5 {
+	top: 10%;
+	left: 90%;
+	height: 7%;
+	width: 5%;
+	filter: blur(3px);
 }
-/*slider*/
+.feather_6 {
+	top: 50%;
+	left: 60%;
+	height: 13%;
+	width: 10%;
+	filter: blur(2px);
+}
+.feather_7 {
+	top: 60%;
+	left: 5%;
+	height: 12%;
+	width: 5%;
+	filter: blur(1px);
+}
+.feather_8 {
+	top: 80%;
+	left: 65%;
+	height: 15%;
+	width: 9%;
+}
+.feather_9 {
+	top: 60%;
+	left: 20%;
+	height: 15%;
+	width: 5%;
+}
 .slide {
 	position: absolute;
 	transition-delay: 0.1s;
 	transition-duration: 1s;
 	transition-timing-function: ease;
+}
+.slide:hover {
+	filter: drop-shadow(0 0 10px white);
 }
 
 /*动画建议全部使用js+transition控制*/

@@ -1,15 +1,9 @@
 //load control
 var stalled_time = 0;
-
 var player = document.getElementById("player");
 var all_unit = document.getElementById("all_unit");
 var loader = document.getElementById("loader");
 var last = document.getElementById("last");
-
-function remove_item_when_anime_finish()
-{
-	anime_begin_index = anime_begin_index + 1;
-}
 
 function skip()
 {
@@ -23,7 +17,7 @@ function skip()
 
 function all_unit_stop()
 {
-	all_unit.style.opacity = "0.1";
+	all_unit.style.opacity = "0.3";
 	loader.style.display = "block";
 	if(stalled_time > 3)
 	{
@@ -50,15 +44,8 @@ window.onload = function()
 
 player.addEventListener("timeupdate", all_unit_start);
 player.addEventListener("stalled", all_unit_stop);
-player.addEventListener("ended", function()
-{
-	player.removeEventListener("stalled", all_unit_stop);
-	player.removeEventListener("timeupdate", all_unit_start);
-	loader.style.display = "none";
-	all_unit.style.display = "block";
-});
 
-//follow the mouse move
+//follow the mouse move #################此部分应该在最后实装到页面上，以保证之前的效率#################
 function mouse_move(event)
 {
 	w = event.clientX;
@@ -68,14 +55,14 @@ function mouse_move(event)
 	{
 		for(var i = 0;i < slider.length; i++)
 		{
-			slider.item(i).style.left = (original_pos_w[i] * 100 + (4 - i)) + "%";
+			slider.item(i).style.left = (original_pos_w[i] * 100 + (4 - (i % 4))) + "%";
 		}
 	}
 	else
 	{
 		for(var i = 0;i < slider.length; i++)
 		{
-			slider.item(i).style.left = (original_pos_w[i] * 100 - (4 - i)) + "%";
+			slider.item(i).style.left = (original_pos_w[i] * 100 - (4 - (i % 4))) + "%";
 		}
 	}
 
@@ -83,14 +70,14 @@ function mouse_move(event)
 	{
 		for(var i = 0;i < slider.length; i++)
 		{
-			slider.item(i).style.top = (original_pos_h[i] * 100 + (4 - i)) + "%";
+			slider.item(i).style.top = (original_pos_h[i] * 100 + (4 - (i % 4))) + "%";
 		}
 	}
 	else
 	{
 		for(var i = 0;i < slider.length; i++)
 		{
-			slider.item(i).style.top = (original_pos_h[i] * 100 - (4 - i)) + "%";
+			slider.item(i).style.top = (original_pos_h[i] * 100 - (4 - (i % 4))) + "%";
 		}
 	}
 }

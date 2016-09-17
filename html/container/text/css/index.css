@@ -1,24 +1,22 @@
 @charset "gb18030";
 /*loader*/
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .loader {
   position: absolute;
   left: 50%;
   top: 50%;
   z-index: 1;
-  width: 150px;
-  height: 150px;
   margin: -75px 0 0 -75px;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
- border-top: 16px solid #ff791b;
- border-bottom: 16px solid #ff7777;
+	border-top: 16px solid #ff791b;
+	border-bottom: 16px solid #ff7777;
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 /*颜色*/
 .aqours_col   {color: #00a1e9;}
@@ -31,36 +29,10 @@
 .hanamaru_col {color: #cfba0f;}
 .mari_col			{color: #a530e0;}
 .ruby_col			{color: #ee55b7;}
-.chiri_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777);
-}
-.chiriyou_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#ff791b,#ff7777,#2aa4db);
-}
-.gk_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#ff7777,#aeaeae,#a530e0);
-}
-.azalea_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#00d29e,#f43232,#cfba0f);
-}
-.cyaron_col {
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: -webkit-linear-gradient(top,#ff791b,#2aa4db,#ee55b7);
-}
 /*全局部署*/
 body {
 	margin: 0px;
 	text-align: center;
-	min-width: 750px;
 }
 a             {transition: 0.3s;text-decoration: none;}
 a:link        {color: #ff7777;}
@@ -72,18 +44,6 @@ a:active      {color: #ff7777;}
 }
 ::-moz-selection {
 	color: #ff791b;
-}
-.chiri_col::selection {
-	-webkit-text-fill-color: #ff791b;
-}
-.gk_col::selection {
-	-webkit-text-fill-color: #ff791b;
-}
-.azalea_col::selection {
-	-webkit-text-fill-color: #ff791b;
-}
-.cyaron_col::selection {
-	-webkit-text-fill-color: #ff791b;
 }
 .chika_col::selection {
 	color: #ff7777;
@@ -107,17 +67,14 @@ a:active      {color: #ff7777;}
 	float: left;
 	width: 5vw;
 	background-color: black;
-	color: deeppink;
-	font-size: 3vh;
-	line-height: 6.5vh;
 	height: 100vh;
-	min-height: 525px;
-	font-weight: 600;
 }
 .ce_feng p {
+	font-weight: 600;
+	font-size: 3vh;
+	line-height: 6.5vh;
+	color: deeppink;
 	text-shadow: 0 0 1.5vh white;
-	height: 95vh;
-	min-height: 525px;
 	margin:0;
 	padding-top: 5vh;
 }
@@ -130,13 +87,8 @@ a:active      {color: #ff7777;}
 .ver_poster img {
 	height: 100vh;
 	width: 67.9vh;
-	min-width: calc(525px * 0.679);
-	min-height: 525px;
 }
 /*main_cover*/
-.main_cover :first-child {
-	margin-top: 0px;
-}
 .main_cover {
 	height: 90vh;
 	min-height: 465px;
@@ -145,6 +97,7 @@ a:active      {color: #ff7777;}
 .title {
 	padding-top: 10vh;
 	margin-bottom: 12vh;
+	margin-top: 0;
 }
 .title h1 {
 	font-size: 4vmax;
@@ -157,34 +110,31 @@ form span {
 	font-size: 2vmax;
 }
 input[required] {
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 1.2vmax;
-    background-color: white;
-		padding-left: 12px;
-		padding-right: 12px;
-		height: 7.5vh;
-		width: 30vw;
-		margin-bottom: 12vh;
-		vertical-align: 4px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 1.2vmax;
+	background-color: white;
+	padding-left: 12px;
+	padding-right: 12px;
+	height: 7.5vh;
+	width: 30vw;
+	margin-bottom: 12vh;
+	vertical-align: 4px;
 }
 button {
-    background-color: #00a1e9;
-    color: white;
-    border: none;
-    cursor: pointer;
-		font-size: 1.2vmax;
-    width: 20vw;
-		height: 6.5vh;
+	background-color: #00a1e9;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 1.2vmax;
+	width: 20vw;
+	height: 6.5vh;
 }
 /*页脚*/
 .footer_cover {
 	padding-bottom: 5px;
 	font-size: 1.2vmax;
-}
-.j-z_vertical-align {
-	vertical-align: -1px;
 }
 .footer_cover p {
 	margin-top: 0px;
@@ -196,8 +146,8 @@ button {
 	animation-play-state: paused;
 }
 @keyframes opacity {
-	from {opacity: 0.0;}
-	to {opacity: 1.0;}
+	0% {opacity: 0.0;}
+	100% {opacity: 1.0;}
 }
 .ce_feng {
 	animation-name: opacity;
@@ -221,11 +171,11 @@ button {
 	animation-fill-mode: forwards;
 }
 @keyframes slide_poster {
-	from {
+	0% {
 		opacity: 0.0;
 		left: -300px;
 	}
-	to {
+	100% {
 		opacity: 1.0;
 		left: 5vw;
 	}
