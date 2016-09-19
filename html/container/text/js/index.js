@@ -3,10 +3,7 @@ var animes = document.getElementsByClassName("init_anime");
 
 window.onload = function()
 {
-	if(window.innerWidth < 715 || window.innerHeight < 490)
-	{
-		document.write("The RESLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommand 715 * 490(px) width at least.");
-	}
+	res_check();
 
 	document.getElementById("loader").style.display= "none";
 	[].forEach.call(animes, function(a){a.style.animationPlayState = "running";});
@@ -24,10 +21,11 @@ function anime_end()
 }
 
 //too small of reslution
-window.onresize = function()
+window.onresize = res_check;
+function res_check()
 {
 	if(window.innerWidth < 715 || window.innerHeight < 490)
 	{
-		document.write("The RESLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommand 715 * 490(px) width at least.");
+		document.write("The RESOLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommand 715 * 490(px) at least. Whereas your resolution is " + window.innerWidth + " * " + window.innerHeight);
 	}
 }
