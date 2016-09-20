@@ -25,33 +25,21 @@
     if (!data.header_range) {
       fl_p.no_range(type_and_dir[data.type] + data.name + type_and_ext[data.type], function(err_1, file_data) {
         if (!err_1) {
-          my_u.write_res(response, 200, {
-            "Content-Type": type_and_mime[data.type]
-          }, file_data);
+          my_u.write_res(response, 200, type_and_mime[data.type], null, file_data);
         } else {
-          my_u.write_res(response, 500, {
-            "Content-Type": "text/plain"
-          }, err_1 + "\n");
+          my_u.write_res(response, 500, null, null, "" + err_1);
         }
       });
     } else {
       fl_p.with_range(type_and_dir[data.type] + data.name + type_and_ext[data.type], data.header_range, function(err_2, out_of_range, file_data) {
         if (!err_2) {
           if (!out_of_range) {
-            my_u.write_res(response, 206, {
-              "Content-Type": type_and_mime[data.type],
-              "Content-Range": "bytes " + file_data.start + "-" + file_data.end + "/" + file_data.file_size,
-              "Content-Length": file_data.size
-            }, file_data.data);
+            my_u.write_res(response, 206, type_and_mime[data.type], ["bytes " + file_data.start + "-" + file_data.end + "/" + file_data.file_size, file_data.size], file_data.data);
           } else {
-            my_u.write_res(response, 406, {
-              "Content-Range": "bytes */" + file_data.file_size
-            }, null);
+            my_u.write_res(response, 406, null, "bytes */" + file_data.file_size, null);
           }
         } else {
-          my_u.write_res(response, 500, {
-            "Content-Type": "text/plain"
-          }, err_2 + "\n");
+          my_u.write_res(response, 500, null, null, "" + err_2);
         }
       });
     }
@@ -60,13 +48,9 @@
   login = function(response, data) {
     fl_p.no_range(type_and_dir.html + "preface.html", function(err_1, file_data) {
       if (!err_1) {
-        my_u.write_res(response, 200, {
-          "Content-Type": "text/html"
-        }, file_data);
+        my_u.write_res(response, 200, "text/html", null, file_data);
       } else {
-        my_u.write_res(response, 500, {
-          "Content-Type": "text/plain"
-        }, err_1 + "\n");
+        my_u.write_res(response, 500, null, null, "" + err_1);
       }
     });
   };

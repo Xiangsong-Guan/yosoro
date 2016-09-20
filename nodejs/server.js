@@ -31,9 +31,7 @@
             };
             route((url.parse(request.url)).pathname, response, post_data);
           } else {
-            my_u.write_res(response, 500, {
-              "Content-Type": "text/plain"
-            }, err_1 + "\n");
+            my_u.write_res(response, 500, null, null, "" + err_1);
           }
         });
       }

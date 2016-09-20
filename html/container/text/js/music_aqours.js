@@ -77,6 +77,6 @@ function res_check()
 {
 	if(window.innerWidth < 670)
 	{
-		document.write("The RESOLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommand 670px width at least. Whereas your resolution is " + window.innerWidth + " * " + window.innerHeight);
+		document.write("The RESOLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommend 670px width at least. Whereas your resolution is " + window.innerWidth + " * " + window.innerHeight);
 	}
 }
