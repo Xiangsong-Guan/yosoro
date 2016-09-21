@@ -23,7 +23,7 @@
 			<p class="init_anime">「　待っててくれるかい？　もっとステキになりたいよ　」</p>
 			<div class="navbar init_anime">
 				<ul class="eng_font">
-					<li class="init_anime"><a href="javascript:void(0)" onclick="open_overlay()"><span class="material-icons chiriyou_col">search</span> Search in All Songs!</a></li>
+					<li class="init_anime"><a href="javascript:void(0)" id="open_overlay"><span class="material-icons chiriyou_col">search</span> Search in All Songs!</a></li>
 					<li class="init_anime"><a href="http://lovelive-anime.jp/uranohoshi/" target="_blank"><span class="material-icons chiriyou_col">web</span> Offcial Site</a></li>
 					<li class="init_anime"><a href="https://twitter.com/kx_cat/lists/aqours-cast" target="_blank"><span class="material-icons chiriyou_col">recent_actors</span> Cast Social</a></li>
 					<li class="init_anime"><a href="/about.html"><span class="material-icons chiriyou_col">accessibility</span> About</a></li>
@@ -460,7 +460,7 @@
 				<p id="lrc_translated" class="zh-cn_font">（╯－＿－）╯╧╧ 蓄势待发！</p>
 			</div>
 			<hr />
-			<audio id="player" src="/resource?type=audio&name=aqours_2nd_cw1" controls="controls" ontimeupdate="roll_lrc()">Your browser does not support the audio tag.</audio>
+			<audio id="player" src="/resource?type=audio&name=aqours_2nd_cw1" controls="controls">Your browser does not support the audio tag.</audio>
 			<div class="audio_staff">
 				<p class="eng_font">Aqours</p>
 				<ul class="jp_font">
@@ -477,7 +477,7 @@
 				<p class="zh-cn_font">作词：畑亜貴，作曲、编曲：山口朗彦</p>
 			</div>
 		</div>
-		<div class="tip zh-cn_font" onclick="hold_player()">
+		<div class="tip zh-cn_font" id="hold_player">
 			<p>点击我以固定播放器，再次点击我以释放播放器。<br />(●'◡'●)<br /></p>
 			<p>→</p>
 			<p>播</p>
@@ -492,7 +492,7 @@
 			<p>！</p>
 		</div>
 		<div id="overlay" class="overlay">
-			<a href="javascript:void(0)" onclick="close_overlay()">&times;</a>
+			<a href="javascript:void(0)" id="close_overlay">&times;</a>
 			<div>
 				<form action="/search" method="GET">
 					<input type="text" name="word" required="required" placeholder="Search via title or singer..." />
