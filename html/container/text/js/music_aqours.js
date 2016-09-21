@@ -3,6 +3,7 @@ var animes = document.getElementsByClassName("init_anime");
 
 window.onload = function()
 {
+	//for too small of reslution
 	res_check();
 
 	document.getElementById("loader").style.display= "none";
@@ -49,6 +50,9 @@ function roll_lrc()
 	}
 }
 
+player.addEventListener("timeupdate", roll_lrc);
+
+//hold_player
 var sidebar = document.getElementById("sidebar");
 
 function hold_player()
@@ -63,6 +67,8 @@ function hold_player()
 	}
 }
 
+document.getElementById("hold_player").addEventListener("click", hold_player);
+
 //overlay
 function open_overlay() {
     document.getElementById("overlay").style.height = "100%";
@@ -71,8 +77,10 @@ function close_overlay() {
     document.getElementById("overlay").style.height = "0%";
 }
 
+document.getElementById("open_overlay").addEventListener("click", open_overlay);
+document.getElementById("close_overlay").addEventListener("click", close_overlay);
+
 //too small of reslution
-window.onresize = res_check;
 function res_check()
 {
 	if(window.innerWidth < 670)
@@ -80,3 +88,5 @@ function res_check()
 		document.write("The RESOLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommend 670px width at least. Whereas your resolution is " + window.innerWidth + " * " + window.innerHeight);
 	}
 }
+
+window.onresize = res_check;
