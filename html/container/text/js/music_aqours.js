@@ -1,13 +1,25 @@
+//too small of reslution
+var res_check;
+
+res_check = () =>
+{
+	if(window.innerWidth < 670)
+	{
+		document.write("The RESOLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommend 670px width at least. Whereas your resolution is " + window.innerWidth + " * " + window.innerHeight);
+	}
+}
+
+window.onresize = res_check;
+
 //loader
 var animes = document.getElementsByClassName("init_anime");
 
-window.onload = function()
+window.onload = () =>
 {
-	//for too small of reslution
 	res_check();
 
 	document.getElementById("loader").style.display= "none";
-	[].forEach.call(animes, function(a){a.style.animationPlayState = "running";});
+	[].forEach.call(animes, (a) => {a.style.animationPlayState = "running";});
 };
 
 //player
@@ -20,14 +32,14 @@ var index = 0;
 var now_i = -1;
 var opa = 10;
 var num_of_col = 14;
-var id_add, id_min;
+var id_add, id_min, roll_lrc;
 
-function roll_lrc()
+roll_lrc = () =>
 {
 	ctime = player.currentTime;
 	for(index = 0; index < lrc.length; index++)
 	{
-		if((ctime < (lrc[index + 1].time - 0.5)) && (ctime >= (lrc[index].time - 0.5)))
+		if((ctime < ((lrc[index + 1])["time"] - 0.5)) && (ctime >= ((lrc[index])["time"] - 0.5)))
 		{
 			if(now_i != index)
 			{
@@ -35,12 +47,12 @@ function roll_lrc()
 
 				lrc_pad.style.opacity = "0.0";
 
-				setTimeout(function()
+				setTimeout(() =>
 				{
-					orignal.innerHTML = lrc[index].lrc_o;
-					translated.innerHTML = lrc[index].lrc_t;
-					orignal.className = aqours_css[lrc[index].aqours_css_i];
-					translated.className = aqours_css[(lrc[index].aqours_css_i + num_of_col)];
+					orignal.innerHTML = (lrc[index])["lrc_o"];
+					translated.innerHTML = (lrc[index])["lrc_t"];
+					orignal.className = aqours_css[(lrc[index])["aqours_css_i"]];
+					translated.className = aqours_css[((lrc[index])["aqours_css_i"] + num_of_col)];
 
 					lrc_pad.style.opacity = "1.0";
 				}, 500);
@@ -54,8 +66,9 @@ player.addEventListener("timeupdate", roll_lrc);
 
 //hold_player
 var sidebar = document.getElementById("sidebar");
+var hold_player;
 
-function hold_player()
+hold_player = () =>
 {
 	if(!sidebar.classList.contains("sidebar_hold"))
 	{
@@ -70,23 +83,17 @@ function hold_player()
 document.getElementById("hold_player").addEventListener("click", hold_player);
 
 //overlay
-function open_overlay() {
-    document.getElementById("overlay").style.height = "100%";
+var open_overlay, close_overlay;
+
+open_overlay = () =>
+{
+  document.getElementById("overlay").style.height = "100%";
 }
-function close_overlay() {
-    document.getElementById("overlay").style.height = "0%";
+
+close_overlay = () =>
+{
+  document.getElementById("overlay").style.height = "0%";
 }
 
 document.getElementById("open_overlay").addEventListener("click", open_overlay);
 document.getElementById("close_overlay").addEventListener("click", close_overlay);
-
-//too small of reslution
-function res_check()
-{
-	if(window.innerWidth < 670)
-	{
-		document.write("The RESOLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommend 670px width at least. Whereas your resolution is " + window.innerWidth + " * " + window.innerHeight);
-	}
-}
-
-window.onresize = res_check;

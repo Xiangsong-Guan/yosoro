@@ -4,8 +4,9 @@ var player = document.getElementById("player");
 var all_unit = document.getElementById("all_unit");
 var loader = document.getElementById("loader");
 var last = document.getElementById("last");
+var skip, all_unit_stop, all_unit_start;
 
-function skip()
+skip = () =>
 {
 	player.removeEventListener("stalled", all_unit_stop);
 	player.removeEventListener("timeupdate", all_unit_start);
@@ -15,7 +16,14 @@ function skip()
 	last.style.display = "block";
 }
 
-function all_unit_stop()
+all_unit_start = () =>
+{
+	loader.style.display = "none";
+	all_unit.style.opacity = "1.0";
+	player.removeEventListener("timeupdate", all_unit_start);
+}
+
+all_unit_stop = () =>
 {
 	all_unit.style.opacity = "0.3";
 	loader.style.display = "block";
@@ -29,24 +37,19 @@ function all_unit_stop()
 	player.addEventListener("timeupdate", all_unit_start);
 }
 
-function all_unit_start()
-{
-	loader.style.display = "none";
-	all_unit.style.opacity = "1.0";
-	player.removeEventListener("timeupdate", all_unit_start);
-}
+player.addEventListener("timeupdate", all_unit_start);
+player.addEventListener("stalled", all_unit_stop);
 
-window.onload = function()
+window.onload = () =>
 {
 	player.volume = 0.5;
 	player.play();
 }
 
-player.addEventListener("timeupdate", all_unit_start);
-player.addEventListener("stalled", all_unit_stop);
-
 //follow the mouse move #################此部分应该在最后实装到页面上，以保证之前的效率#################
-function mouse_move(event)
+var mouse_move;
+
+mouse_move = (event) =>
 {
 	w = event.clientX;
 	h = event.clientY;
@@ -87,12 +90,12 @@ var screen_h = window.innerHeight / 2;
 var slider = document.getElementsByClassName("slide");
 var original_pos_w = [];
 var original_pos_h = [];
-[].forEach.call(slider, function(a){original_pos_w.push((parseInt(window.getComputedStyle(a).left) / window.innerWidth).toFixed(2));});
-[].forEach.call(slider, function(a){original_pos_h.push((parseInt(window.getComputedStyle(a).top) / window.innerHeight).toFixed(2));});
+[].forEach.call(slider, (a) => {original_pos_w.push((parseInt(window.getComputedStyle(a).left) / window.innerWidth).toFixed(2));});
+[].forEach.call(slider, (a) => {original_pos_h.push((parseInt(window.getComputedStyle(a).top) / window.innerHeight).toFixed(2));});
 var w = 0;
 document.addEventListener("mousemove", mouse_move, false);
 
-window.onresize = function()
+window.onresize = () =>
 {
 	screen_w = window.innerWidth / 2;
 	screen_h = window.innerHeight / 2;
