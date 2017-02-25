@@ -371,28 +371,10 @@ audio {
 	font-size: 15px;
 	color: #ff791b;
 }
-/*ËÑË÷¿ò*/
-.overlay input {
-	box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 1.2vmax;
-  background-color: white;
-  background-image: url('/container/img/searchicon.png');
-  background-position: 1vw 50%;
-  background-repeat: no-repeat;
-	padding: 0 3vw 0 3vw;
-	height: 7.5vh;
-	width: 50vw;
-}
-.overlay form {
-	position: absolute;
-	bottom: 5vw;
-	left: 25vw;
-}
+/*overlay*/
 .overlay div {
-	height: 50vh;
-	background-color: rgba(100, 150, 255, 0.5);
+	height: 62vh;
+	background-color: rgba(0, 0, 0, 0.38);
 	position: relative;
 }
 .overlay {

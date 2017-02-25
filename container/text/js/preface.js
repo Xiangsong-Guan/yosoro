@@ -18,9 +18,9 @@ skip = () =>
 
 all_unit_start = () =>
 {
+	player.removeEventListener("timeupdate", all_unit_start);
 	loader.style.display = "none";
 	all_unit.style.opacity = "1.0";
-	player.removeEventListener("timeupdate", all_unit_start);
 }
 
 all_unit_stop = () =>
@@ -38,7 +38,7 @@ all_unit_stop = () =>
 }
 
 player.addEventListener("timeupdate", all_unit_start);
-player.addEventListener("stalled", all_unit_stop);
+player.addEventListener("waiting", all_unit_stop);
 
 window.onload = () =>
 {
@@ -56,31 +56,31 @@ mouse_move = (event) =>
 
 	if(w < screen_w)
 	{
-		for(var i = 0;i < slider.length; i++)
+		for(var i = 0; i < slider.length; i++)
 		{
-			slider.item(i).style.left = (original_pos_w[i] * 100 + (4 - (i % 4))) + "%";
+			slider.item(i).style.left = (original_pos_w[i] * 100 + (1 + (i % 4))) + "%";
 		}
 	}
 	else
 	{
-		for(var i = 0;i < slider.length; i++)
+		for(var i = 0; i < slider.length; i++)
 		{
-			slider.item(i).style.left = (original_pos_w[i] * 100 - (4 - (i % 4))) + "%";
+			slider.item(i).style.left = (original_pos_w[i] * 100 - (1 + (i % 4))) + "%";
 		}
 	}
 
 	if(h < screen_h)
 	{
-		for(var i = 0;i < slider.length; i++)
+		for(var i = 0; i < slider.length; i++)
 		{
-			slider.item(i).style.top = (original_pos_h[i] * 100 + (4 - (i % 4))) + "%";
+			slider.item(i).style.top = (original_pos_h[i] * 100 + (1 + (i % 4))) + "%";
 		}
 	}
 	else
 	{
-		for(var i = 0;i < slider.length; i++)
+		for(var i = 0; i < slider.length; i++)
 		{
-			slider.item(i).style.top = (original_pos_h[i] * 100 - (4 - (i % 4))) + "%";
+			slider.item(i).style.top = (original_pos_h[i] * 100 - (1 + (i % 4))) + "%";
 		}
 	}
 }
