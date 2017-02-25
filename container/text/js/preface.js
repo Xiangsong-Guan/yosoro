@@ -1,24 +1,13 @@
 //load control
-var stalled_time = 0;
 var player = document.getElementById("player");
 var all_unit = document.getElementById("all_unit");
 var loader = document.getElementById("loader");
 var last = document.getElementById("last");
-var skip, all_unit_stop, all_unit_start;
-
-skip = () =>
-{
-	player.removeEventListener("stalled", all_unit_stop);
-	player.removeEventListener("timeupdate", all_unit_start);
-	player.volume = 0.1;
-	loader.style.display = "none";
-	all_unit.style.display = "none";
-	last.style.display = "block";
-}
+var all_unit_stop, all_unit_start, all_unit_finsh;
 
 all_unit_start = () =>
 {
-	player.removeEventListener("timeupdate", all_unit_start);
+	player.removeEventListener("playing", all_unit_start);
 	loader.style.display = "none";
 	all_unit.style.opacity = "1.0";
 }
@@ -27,23 +16,35 @@ all_unit_stop = () =>
 {
 	all_unit.style.opacity = "0.3";
 	loader.style.display = "block";
-	if(stalled_time > 3)
-	{
-		player.pause();
-		alert("We just find your network sucks. Now let us skip this whole preface and get the main dish.")
-		skip();
-	}
-	stalled_time = stalled_time + 1;
-	player.addEventListener("timeupdate", all_unit_start);
+	player.addEventListener("playing", all_unit_start);
 }
 
-player.addEventListener("timeupdate", all_unit_start);
+all_unit_finsh = () =>
+{
+  player.removeEventListener("playing", all_unit_start);
+  player.removeEventListener("waiting", all_unit_stop);
+  all_unit.style.opacity = "0.0";
+  //动画组停止，消失，last起
+  setTimeout(() =>
+  {
+    all_unit.style.opacity = "1.0";
+  }, 500);
+}
+
+player.addEventListener("playing", all_unit_start);
 player.addEventListener("waiting", all_unit_stop);
+player.addEventListener("ended", all_unit_finsh);
 
 window.onload = () =>
 {
-	player.volume = 0.5;
-	player.play();
+  all_unit.style.opacity = "0.3";
+  loader.innerHTML = "<br /><br />LOADING<br />BGM..."
+  player.load();
+  player.addEventListener("canplay", () =>
+  {
+    player.volume = 0.5;
+    player.play();
+  });
 }
 
 //follow the mouse move #################此部分应该在最后实装到页面上，以保证之前的效率#################

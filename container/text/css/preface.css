@@ -4,7 +4,7 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-.loader {
+#loader {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -40,8 +40,15 @@ body {
 .zh-cn_font {
 	font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
 }
+/*all_unit*/
+#all_unit {
+  opacity: 0.0;
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+  transition-property: opacity;
+}
 /*Last*/
-.last {
+#last {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -49,7 +56,7 @@ body {
 	height: 100%;
 	background-color: #00a1e9;
 }
-.last h1 {
+#last h1 {
 	position: absolute;
 	top: 40%;
 	left: 35%;

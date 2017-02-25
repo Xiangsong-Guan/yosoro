@@ -13,13 +13,18 @@ window.onresize = res_check;
 
 //loader
 var animes = document.getElementsByClassName("init_anime");
+var sidebar = document.getElementById("sidebar");
+var tips = document.getElementById("hold_player");
 
 window.onload = () =>
 {
 	res_check();
-
+  player.load();
 	document.getElementById("loader").style.display= "none";
 	[].forEach.call(animes, (a) => {a.style.animationPlayState = "running";});
+  tips.style.animationPlayState = "running";
+  sidebar.style.animationPlayState = "running";
+  tips.style.opacity = "0.85";
 };
 
 //player
@@ -65,10 +70,7 @@ roll_lrc = () =>
 player.addEventListener("timeupdate", roll_lrc);
 
 //hold_player
-var sidebar = document.getElementById("sidebar");
-var hold_player;
-
-hold_player = () =>
+var hold_player = () =>
 {
 	if(!sidebar.classList.contains("sidebar_hold"))
 	{
@@ -80,7 +82,7 @@ hold_player = () =>
 	}
 }
 
-document.getElementById("hold_player").addEventListener("click", hold_player);
+tips.addEventListener("click", hold_player);
 
 //overlay
 var open_overlay, close_overlay;
