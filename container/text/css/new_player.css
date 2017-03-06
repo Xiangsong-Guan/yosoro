@@ -1,7 +1,7 @@
 @charset "gb18030";
 /*overlay*/
 .overlay div {
-	height: 62vh;
+	height: 70vh;
 	background-color: rgba(0, 0, 0, 0.38);
 	position: relative;
 }
