@@ -18,6 +18,11 @@
   height: 120px;
   animation: spin 2s linear infinite;
 }
+#loader p {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
 /*È«¾Ö²¿Êð*/
 body {
 	margin: 0px;
@@ -31,14 +36,14 @@ body {
 }
 /*×ÖÌå*/
 .eng_font {
-	font-family: 'Josefin Slab', serif;
+	font-family: "Josefin Slab", "Microsoft YaHei", "Î¢ÈíÑÅºÚ", sans-serif;
 	font-weight:600;
 }
 .jp_font {
-	font-family: ¥á¥¤¥ê¥ª, Meiryo, "¥Ò¥é¥®¥Î½Ç¥´ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "£Í£Ó £Ð¥´¥·¥Ã¥¯", "MS PGothic", sans-serif;
+	font-family: "¥á¥¤¥ê¥ª", Meiryo, "¥Ò¥é¥®¥Î½Ç¥´ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "£Í£Ó £Ð¥´¥·¥Ã¥¯", "MS PGothic", sans-serif;
 }
 .zh-cn_font {
-	font-family: Helvetica, Tahoma, Arial, STXihei, "»ªÎÄÏ¸ºÚ", Heiti, "ºÚÌå", "Microsoft YaHei", "Î¢ÈíÑÅºÚ", SimSun, "ËÎÌå", sans-serif;
+	font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", sans-serif;
 }
 /*all_unit*/
 #all_unit {

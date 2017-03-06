@@ -72,13 +72,15 @@ player.addEventListener("timeupdate", roll_lrc);
 //hold_player
 var hold_player = () =>
 {
-	if(!sidebar.classList.contains("sidebar_hold"))
+	if(window.getComputedStyle(sidebar).right != "0px")
 	{
-		sidebar.classList.add("sidebar_hold");
+		sidebar.style.right = "0px";
+    sidebar.style.opacity = "0.85";
 	}
 	else
 	{
-		sidebar.classList.remove("sidebar_hold");
+		sidebar.style.right = "-300px";
+    sidebar.style.opacity = "0.0";
 	}
 }
 

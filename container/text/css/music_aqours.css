@@ -18,6 +18,11 @@
   height: 120px;
   animation: spin 2s linear infinite;
 }
+#loader p {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
 /*颜色*/
 .aqours_col   {color: #00a1e9;}
 .chika_col    {color: #ff791b;}
@@ -106,14 +111,14 @@ a:active      {color: #ff7777;}
 }
 /*字体*/
 .eng_font {
-	font-family: 'Josefin Slab', serif;
+	font-family: 'Josefin Slab', "Microsoft YaHei", "微软雅黑", sans-serif;
 	font-weight:600;
 }
 .jp_font {
-	font-family: メイリオ, Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 .zh-cn_font {
-	font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+	font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
 }
 /*标题部分*/
 .navbar a:link    {color: #666;}
@@ -316,10 +321,6 @@ svg {
 #sidebar:hover {
 	right: 0px;
 	opacity: 0.85;
-}
-#sidebar_hold {
-  right: 0px;
-  opacity: 0.85;
 }
 .audio_staff {
 	padding-left: 10px;
