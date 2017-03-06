@@ -38,7 +38,7 @@ player.addEventListener("ended", all_unit_finsh);
 window.onload = () =>
 {
   all_unit.style.opacity = "0.3";
-  loader.innerHTML = "<p style=\"font-family: 'Microsoft YaHei', \"Î¢ÈíÑÅºÚ\", sans-serif;\">LOADING<br />BGM...</p>";
+  loader.innerHTML = "<p>LOADING<br />BGM...</p>";
   player.load();
   player.addEventListener("canplay", () =>
   {
