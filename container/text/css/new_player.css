@@ -2,8 +2,7 @@
 /*overlay*/
 .overlay div {
 	height: 62vh;
-	background-color: rgba(0, 0, 0, 0.38);
-	position: relative;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 .overlay {
 	height: 0;

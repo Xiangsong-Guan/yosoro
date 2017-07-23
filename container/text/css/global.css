@@ -22,7 +22,7 @@
   position: absolute;
   left: 20%;
   top: 20%;
-  font-family: 'Microsoft YaHei', 'Î¢ÈíÑÅºÚ', sans-serif;
+  font-family: "Source Han Sans", sans-serif;
 }
 /*ÑÕÉ«*/
 .aqours_col   {color: #00a1e9;}
@@ -113,12 +113,12 @@ hr {
 }
 /*×ÖÌå*/
 .eng_font {
-	font-family: "Josefin Slab", "Microsoft YaHei", "Î¢ÈíÑÅºÚ", sans-serif;
-	font-weight:600;
+	font-family: "Josefin Slab", sans-serif;
+	font-weight: 600;
 }
 .jp_font {
-	font-family: "¥á¥¤¥ê¥ª", Meiryo, "¥Ò¥é¥®¥Î½Ç¥´ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "£Í£Ó £Ð¥´¥·¥Ã¥¯", "MS PGothic", sans-serif;
+	font-family: "Ô´¥Î½Ç¥´¥·¥Ã¥¯", "Source Han Sans", sans-serif;
 }
 .zh-cn_font {
-	font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", sans-serif;
+	font-family: "Ë¼Ô´ºÚÌå", "Source Han Sans", sans-serif;
 }
