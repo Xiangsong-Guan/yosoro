@@ -1,12 +1,10 @@
 //too small of reslution
 var res_check;
 
-res_check = () =>
-{
-	if(window.innerWidth < 670)
-	{
-		document.write("The RESOLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommend 670px width at least. Whereas your resolution is " + window.innerWidth + " * " + window.innerHeight);
-	}
+res_check = () => {
+  if (window.innerWidth < 670) {
+    document.write("The RESOLUTION of your divce is too SMALL to display this page PERFECTLY. If you can RESIZE the window, please REFRESH after the resize operation. We recommend 670px width at least. Whereas your resolution is " + window.innerWidth + " * " + window.innerHeight);
+  }
 }
 
 window.onresize = res_check;
@@ -16,12 +14,11 @@ var animes = document.getElementsByClassName("init_anime");
 var sidebar = document.getElementById("sidebar");
 var tips = document.getElementById("hold_player");
 
-window.onload = () =>
-{
-	res_check();
+window.onload = () => {
+  res_check();
   player.load();
-	document.getElementById("loader").style.display= "none";
-	[].forEach.call(animes, (a) => {a.style.animationPlayState = "running";});
+  document.getElementById("loader").style.display = "none";
+  [].forEach.call(animes, (a) => { a.style.animationPlayState = "running"; });
   tips.style.animationPlayState = "running";
   sidebar.style.animationPlayState = "running";
   tips.style.opacity = "0.85";
@@ -39,49 +36,41 @@ var opa = 10;
 var num_of_col = 14;
 var id_add, id_min, roll_lrc;
 
-roll_lrc = () =>
-{
-	ctime = player.currentTime;
-	for(index = 0; index < lrc.length; index++)
-	{
-		if((ctime < ((lrc[index + 1])["time"] - 0.5)) && (ctime >= ((lrc[index])["time"] - 0.5)))
-		{
-			if(now_i != index)
-			{
-				now_i = index;
+roll_lrc = () => {
+  ctime = player.currentTime;
+  for (index = 0; index < lrc.length; index++) {
+    if ((ctime < ((lrc[index + 1])["time"] - 0.5)) && (ctime >= ((lrc[index])["time"] - 0.5))) {
+      if (now_i != index) {
+        now_i = index;
 
-				lrc_pad.style.opacity = "0.0";
+        lrc_pad.style.opacity = "0.0";
 
-				setTimeout(() =>
-				{
-					orignal.innerHTML = (lrc[index])["lrc_o"];
-					translated.innerHTML = (lrc[index])["lrc_t"];
-					orignal.className = aqours_css[(lrc[index])["aqours_css_i"]];
-					translated.className = aqours_css[((lrc[index])["aqours_css_i"] + num_of_col)];
+        setTimeout(() => {
+          orignal.innerHTML = (lrc[index])["lrc_o"];
+          translated.innerHTML = (lrc[index])["lrc_t"];
+          orignal.className = aqours_css[(lrc[index])["aqours_css_i"]];
+          translated.className = aqours_css[((lrc[index])["aqours_css_i"] + num_of_col)];
 
-					lrc_pad.style.opacity = "1.0";
-				}, 500);
-			}
-			break;
-		}
-	}
+          lrc_pad.style.opacity = "1.0";
+        }, 500);
+      }
+      break;
+    }
+  }
 }
 
 player.addEventListener("timeupdate", roll_lrc);
 
 //hold_player
-var hold_player = () =>
-{
-	if(window.getComputedStyle(sidebar).right != "0px")
-	{
-		sidebar.style.right = "0px";
+var hold_player = () => {
+  if (window.getComputedStyle(sidebar).right != "0px") {
+    sidebar.style.right = "0px";
     sidebar.style.opacity = "0.85";
-	}
-	else
-	{
-		sidebar.style.right = "-300px";
+  }
+  else {
+    sidebar.style.right = "-300px";
     sidebar.style.opacity = "0.0";
-	}
+  }
 }
 
 tips.addEventListener("click", hold_player);

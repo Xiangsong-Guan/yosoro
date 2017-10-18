@@ -1,13 +1,11 @@
 //overlay
 var open_overlay, close_overlay;
 
-open_overlay = () =>
-{
+open_overlay = () => {
   document.getElementById("overlay").style.height = "100%";
 }
 
-close_overlay = () =>
-{
+close_overlay = () => {
   document.getElementById("overlay").style.height = "0%";
 }
 
